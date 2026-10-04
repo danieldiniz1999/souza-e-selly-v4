@@ -106,38 +106,15 @@ h1, h2, h3, h4, .font-serif {
   }
 }
 
-/* Top Banner */
-.top-bar {
-  background-color: #050507;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-  padding: 0.5rem 1rem;
-  font-size: 0.75rem;
-  color: var(--gold-200);
-}
-
-.top-bar-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: center;
-  justify-content: space-between;
-}
-
-@media (min-width: 640px) {
-  .top-bar-content {
-    flex-direction: row;
-  }
-}
-
-/* Header & Navbar */
+/* Header & Navbar - Ultra Sleek Luxury Bar */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(7, 7, 9, 0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+  background: rgba(7, 7, 9, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.16);
   transition: var(--transition-smooth);
 }
 
@@ -145,29 +122,29 @@ h1, h2, h3, h4, .font-serif {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
 }
 
 .brand-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
   text-decoration: none;
   color: inherit;
 }
 
 .brand-logo-ring {
   position: relative;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 2.15rem;
+  height: 2.15rem;
   border-radius: 9999px;
-  border: 2px solid var(--gold-400);
-  box-shadow: 0 0 16px var(--gold-glow);
+  border: 1.5px solid var(--gold-400);
+  box-shadow: 0 0 12px var(--gold-glow);
   overflow: hidden;
   background: #000;
   flex-shrink: 0;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
 }
 
 .brand-logo-ring img {
@@ -177,32 +154,33 @@ h1, h2, h3, h4, .font-serif {
 }
 
 .brand-logo-ring:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.45);
 }
 
 .brand-title {
   font-family: var(--font-serif);
-  font-size: 1.125rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   color: #FFFDF5;
   line-height: 1.1;
 }
 
 .brand-sub {
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.16em;
   color: var(--gold-400);
   display: block;
-  margin-top: 0.15rem;
+  margin-top: 0.1rem;
 }
 
 .nav-links {
   display: none;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.15rem;
 }
 
 @media (min-width: 1024px) {
@@ -212,19 +190,20 @@ h1, h2, h3, h4, .font-serif {
 }
 
 .nav-link {
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.675rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   color: var(--text-muted);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
   position: relative;
-  padding: 0.35rem 0;
+  padding: 0.25rem 0;
 }
 
 .nav-link:hover {
   color: var(--gold-200);
+  transform: translateY(-1px);
 }
 
 .nav-link::after {
@@ -233,13 +212,27 @@ h1, h2, h3, h4, .font-serif {
   bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
-  background: var(--gold-400);
-  transition: width 0.3s ease;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--gold-400), var(--gold-200));
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+.header-cta {
+  padding: 0.42rem 0.95rem !important;
+  font-size: 0.6875rem !important;
+  border-radius: 0.45rem !important;
+  letter-spacing: 0.04em !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 14px -2px rgba(212, 175, 55, 0.38) !important;
+}
+
+.header-cta svg {
+  width: 14px !important;
+  height: 14px !important;
 }
 
 /* Botões Shimmer Dourado */
@@ -253,43 +246,60 @@ h1, h2, h3, h4, .font-serif {
   font-weight: 700;
   font-size: 0.78rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   padding: 0.75rem 1.4rem;
   border-radius: 0.625rem;
   text-decoration: none;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 20px -2px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 4px 18px -2px rgba(212, 175, 55, 0.45), 0 2px 6px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease, filter 0.2s ease;
+  will-change: transform, box-shadow;
 }
 
 .btn-gold:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 35px 2px rgba(212, 175, 55, 0.65);
+  transform: translateY(-2.5px) scale(1.02);
+  box-shadow: 0 10px 32px 3px rgba(212, 175, 55, 0.65), 0 4px 12px rgba(0, 0, 0, 0.8);
+  filter: brightness(1.04);
 }
 
+.btn-gold:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
+}
+
+.btn-gold svg {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-gold:hover svg {
+  transform: scale(1.18) rotate(-4deg);
+}
+
+/* Feixe de Shimmer Contínuo nos Botões Dourados */
 .btn-gold::after {
   content: '';
   position: absolute;
   top: -50%;
-  left: -60%;
-  width: 220%;
+  left: -70%;
+  width: 240%;
   height: 200%;
   background: linear-gradient(
     60deg,
     rgba(255, 255, 255, 0) 25%,
-    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0.55) 50%,
     rgba(255, 255, 255, 0) 75%
   );
-  transform: rotate(30deg) translateX(-100%);
-  animation: shimmerMove 4s infinite;
+  transform: rotate(28deg);
+  animation: btnShimmerRay 3.6s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
-@keyframes shimmerMove {
-  0% { transform: rotate(30deg) translateX(-120%); }
-  25%, 100% { transform: rotate(30deg) translateX(120%); }
+@keyframes btnShimmerRay {
+  0% { transform: rotate(28deg) translateX(-120%); }
+  28%, 100% { transform: rotate(28deg) translateX(120%); }
 }
 
 .btn-outline {
@@ -309,31 +319,94 @@ h1, h2, h3, h4, .font-serif {
   border: 1px solid var(--gold-border);
   backdrop-filter: blur(10px);
   cursor: pointer;
-  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-outline:hover {
-  border-color: var(--gold-400);
-  background: rgba(22, 22, 29, 0.95);
-  transform: translateY(-2px);
+  border-color: var(--gold-300);
+  background: rgba(212, 175, 55, 0.12);
+  transform: translateY(-2.5px);
   color: #FFFDF5;
+  box-shadow: 0 8px 24px -2px rgba(212, 175, 55, 0.3), 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.btn-outline:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.btn-outline svg {
+  transition: transform 0.25s ease;
+}
+
+.btn-outline:hover svg {
+  transform: translateX(4px);
 }
 
 /* Cards de Vidro e Superfícies Luxuosas */
 .glass-card {
-  background: rgba(16, 16, 21, 0.75);
+  background: rgba(16, 16, 21, 0.78);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--gold-border);
   border-radius: 0.875rem;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
-  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.35s ease, 
+              background 0.35s ease;
+  will-change: transform, box-shadow;
+}
+
+/* Feixe de Luz Refletiva ao Passar o Mouse no Card */
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -80%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.08) 40%, 
+    rgba(212, 175, 55, 0.22) 50%, 
+    rgba(255, 255, 255, 0.08) 60%, 
+    transparent 100%
+  );
+  transform: rotate(35deg);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: none;
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+  left: 150%;
+  transition: left 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
 }
 
 .glass-card:hover {
-  border-color: var(--gold-border-bright);
-  box-shadow: 0 15px 40px -10px rgba(212, 175, 55, 0.15), 0 10px 30px -10px rgba(0, 0, 0, 0.9);
-  transform: translateY(-3px);
+  background: rgba(22, 22, 29, 0.92);
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.9), 0 0 28px rgba(212, 175, 55, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Micro-Interação nos Ícones do Card */
+.glass-card svg,
+.glass-card .service-icon {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.35s ease;
+}
+
+.glass-card:hover svg,
+.glass-card:hover .service-icon {
+  transform: scale(1.12) translateY(-2px);
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
 }
 
 /* Hero Section */
@@ -424,6 +497,18 @@ h1, h2, h3, h4, .font-serif {
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 0 40px rgba(212, 175, 55, 0.12), 0 16px 35px rgba(0, 0, 0, 0.9);
+  animation: vitrineFloat 7s ease-in-out infinite alternate;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.showcase-card:hover {
+  border-color: var(--gold-400);
+  box-shadow: 0 0 55px rgba(212, 175, 55, 0.28), 0 22px 45px rgba(0, 0, 0, 0.95);
+}
+
+@keyframes vitrineFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
 }
 
 .corner-accent {
@@ -431,6 +516,10 @@ h1, h2, h3, h4, .font-serif {
   width: 1rem;
   height: 1rem;
   border-color: var(--gold-400);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.showcase-card:hover .corner-accent {
+  border-color: #FFFDF5;
 }
 .corner-tl { top: 0.75rem; left: 0.75rem; border-top: 2px solid; border-left: 2px solid; }
 .corner-tr { top: 0.75rem; right: 0.75rem; border-top: 2px solid; border-right: 2px solid; }
@@ -446,11 +535,14 @@ h1, h2, h3, h4, .font-serif {
   border: 1px solid var(--gold-border);
   border-radius: 0.65rem;
   margin-bottom: 0.6rem;
-  transition: var(--transition-smooth);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .lawyer-chip:hover {
   border-color: var(--gold-400);
+  background: rgba(18, 18, 24, 0.98);
+  transform: translateX(4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6), 0 0 16px rgba(212, 175, 55, 0.22);
 }
 
 .lawyer-chip-avatar {
@@ -461,6 +553,11 @@ h1, h2, h3, h4, .font-serif {
   overflow: hidden;
   flex-shrink: 0;
   box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.lawyer-chip:hover .lawyer-chip-avatar {
+  transform: scale(1.08);
 }
 
 .lawyer-chip-avatar img {
@@ -492,6 +589,16 @@ h1, h2, h3, h4, .font-serif {
   border-radius: 0.75rem;
   padding: 1rem 0.85rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stat-box:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--gold-400);
+  background: rgba(22, 22, 28, 0.9);
+  box-shadow: 0 12px 28px -5px rgba(0, 0, 0, 0.85), 0 0 22px rgba(212, 175, 55, 0.22);
 }
 
 .stat-val {
@@ -499,6 +606,11 @@ h1, h2, h3, h4, .font-serif {
   font-size: 1.85rem;
   font-weight: 700;
   line-height: 1;
+  transition: text-shadow 0.3s ease;
+}
+
+.stat-box:hover .stat-val {
+  text-shadow: 0 0 18px rgba(212, 175, 55, 0.75);
 }
 
 .stat-lbl {
@@ -595,45 +707,55 @@ h1, h2, h3, h4, .font-serif {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.875rem 1.5rem;
-  border-radius: 0.75rem;
+  padding: 0.75rem 1.35rem;
+  border-radius: 0.65rem;
   background: var(--bg-card);
   border: 1px solid var(--gold-border);
   color: var(--text-muted);
   font-family: var(--font-serif);
-  font-size: 1rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tab-btn:hover {
   border-color: var(--gold-400);
-  color: #FFF;
+  color: #FFFDF5;
+  transform: translateY(-2.5px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.22);
+}
+
+.tab-btn:active {
+  transform: translateY(1px) scale(0.98);
 }
 
 .tab-btn.active {
-  background: var(--gold-400);
-  color: #070709;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.22) 0%, rgba(170, 119, 28, 0.18) 100%);
+  color: var(--gold-200);
   font-weight: 700;
-  border-color: var(--gold-200);
-  box-shadow: 0 0 25px var(--gold-glow);
-  transform: scale(1.03);
+  border-color: var(--gold-300);
+  box-shadow: 0 0 24px var(--gold-glow), inset 0 0 12px rgba(212, 175, 55, 0.12);
+  transform: translateY(-1px);
 }
 
 /* Cards de Advogadas */
 .lawyer-card {
-  border-radius: 1.25rem;
+  border-radius: 1.15rem;
   background: linear-gradient(180deg, #101015 0%, #070709 100%);
   border: 1px solid var(--gold-border);
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
-  transition: var(--transition-smooth);
+  box-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.85);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .lawyer-card:hover {
-  border-color: var(--gold-400);
-  box-shadow: 0 20px 45px rgba(212, 175, 55, 0.15);
+  border-color: var(--gold-border-bright);
+  transform: translateY(-7px);
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.95), 0 0 35px rgba(212, 175, 55, 0.28);
 }
 
 .lawyer-img-wrap {
@@ -642,6 +764,7 @@ h1, h2, h3, h4, .font-serif {
   aspect-ratio: 4/5;
   max-height: 360px;
   background: #000;
+  overflow: hidden;
 }
 
 .lawyer-img-wrap img {
@@ -649,6 +772,12 @@ h1, h2, h3, h4, .font-serif {
   height: 100%;
   object-fit: cover;
   object-position: top;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.65s ease;
+}
+
+.lawyer-card:hover .lawyer-img-wrap img {
+  transform: scale(1.05);
+  filter: contrast(1.03) brightness(1.03);
 }
 
 /* FAQ Acordeão */
@@ -656,13 +785,19 @@ h1, h2, h3, h4, .font-serif {
   background: rgba(16, 16, 21, 0.8);
   border: 1px solid var(--gold-border);
   border-radius: 0.875rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
   overflow: hidden;
-  transition: var(--transition-smooth);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(20, 20, 26, 0.9);
 }
 
 .faq-item.open {
   border-color: var(--gold-400);
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.7), 0 0 18px rgba(212, 175, 55, 0.15);
 }
 
 .faq-q {
@@ -737,8 +872,8 @@ h1, h2, h3, h4, .font-serif {
 }
 
 .wa-btn {
-  width: 4rem;
-  height: 4rem;
+  width: 3.75rem;
+  height: 3.75rem;
   border-radius: 9999px;
   background: linear-gradient(135deg, #101015 0%, #070709 100%);
   border: 2px solid var(--gold-400);
@@ -750,24 +885,32 @@ h1, h2, h3, h4, .font-serif {
   justify-content: center;
   text-decoration: none;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  animation: waPulseFloat 4s ease-in-out infinite alternate;
 }
 
 .wa-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.12) rotate(4deg);
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.5), 0 8px 25px rgba(0, 0, 0, 0.9);
+}
+
+@keyframes waPulseFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
 }
 
 .wa-btn-ring {
   position: absolute;
   inset: -0.35rem;
   border-radius: 9999px;
-  border: 2px solid rgba(212, 175, 55, 0.4);
-  animation: radarPulse 2.5s infinite;
+  border: 2px solid rgba(212, 175, 55, 0.6);
+  animation: radarPulse 2.8s infinite cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
 }
 
 @keyframes radarPulse {
-  0% { transform: scale(1); opacity: 0.8; }
-  100% { transform: scale(1.4); opacity: 0; }
+  0% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(1.45); opacity: 0; }
 }
 
 .wa-tooltip {
@@ -1166,19 +1309,6 @@ h1, h2, h3, h4, .font-serif {
     padding-right: 1.15rem !important;
   }
 
-  .top-bar {
-    padding: 0.35rem 0.5rem !important;
-    font-size: 0.6875rem !important;
-  }
-
-  .top-bar-content {
-    font-size: 0.6875rem;
-    text-align: center;
-    gap: 0.25rem;
-  }
-  .top-bar-divider {
-    display: none;
-  }
 
   .hero-tag {
     font-size: 0.65rem !important;
@@ -1306,5 +1436,49 @@ h1, h2, h3, h4, .font-serif {
     width: 2.25rem !important;
     height: 2.25rem !important;
   }
+}
+
+/* ==========================================================================
+   ANIMAÇÕES DINÂMICAS & SCROLL REVEAL EM TODOS OS CARDS E BOTÕES
+   ========================================================================== */
+
+/* Efeito de revelação suave em scroll para todos os cards */
+.reveal-card {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-card.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Micro-animação de brilho e escala nas estrelas dos depoimentos */
+.glass-card:hover svg[fill="#D4AF37"],
+.glass-card:hover svg[fill*="gold"] {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.7));
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+}
+
+/* Micro-animação nos ícones e setas dentro dos cards */
+.glass-card svg {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+}
+
+.glass-card:hover svg {
+  transform: scale(1.1) translateY(-2px);
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
+}
+
+/* Efeito de clique táctil universal em todos os botões */
+button:active,
+.btn-gold:active,
+.btn-outline:active,
+.tab-btn:active {
+  transform: scale(0.97) translateY(1px) !important;
 }
 
