@@ -567,19 +567,31 @@ h1, h2, h3, h4, .font-serif {
   object-position: top;
 }
 
-/* Números Institucionais */
+/* Números Institucionais (5 Pilares de Autoridade) */
 .stats-strip {
   margin-top: 2.75rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(212, 175, 55, 0.2);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  gap: 1.15rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .stats-strip {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .stats-strip {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 639px) {
+  .stat-box-featured {
+    grid-column: span 2;
   }
 }
 
