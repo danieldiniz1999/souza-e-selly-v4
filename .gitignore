@@ -12,10 +12,11 @@ pids
 
 # Dependency directories
 node_modules/
-
-# Vercel deployment
-.vercel
 dist/
+
+# Build and preview artifacts
+*.png
+.vercel
 
 # Environment variables
 .env

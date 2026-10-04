@@ -1,11 +1,16 @@
 {
-  "name": "souza-e-selly-v2",
+  "name": "souza-e-selly-v4",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "description": "Souza & Selly Advocacia — Landing page institucional e comercial de alto padrão",
   "scripts": {
-    "build": "node build.js",
-    "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.3.2"
   }
 }

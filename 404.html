@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Não Encontrada | Souza &amp; Selly Advocacia</title>
+  <meta http-equiv="refresh" content="3;url=/">
+  <link rel="icon" type="image/jpeg" href="/assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090B0E;
+      --card-bg: rgba(18, 22, 28, 0.85);
+      --gold: #D4AF37;
+      --gold-light: #F3E5AB;
+      --gold-dark: #997B24;
+      --text: #E5E7EB;
+      --text-muted: #9CA3AF;
+      --border: rgba(212, 175, 55, 0.25);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at 50% 30%, #151A22 0%, #090B0E 100%);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px 36px;
+      max-width: 520px;
+      width: 100%;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(212, 175, 55, 0.1);
+      backdrop-filter: blur(12px);
+    }
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+      margin: 0 auto 24px;
+      display: block;
+      object-fit: cover;
+    }
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+    p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: #000;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 999px;
+      box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+      transition: all 0.25s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+    }
+    .hint {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: var(--gold);
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="/assets/logo.jpg" alt="Souza &amp; Selly Advocacia" class="logo">
+    <h1>SOUZA &amp; SELLY</h1>
+    <p>A página solicitada não foi encontrada ou foi movida. Você será redirecionado para a página inicial em instantes.</p>
+    <a href="/" class="btn">Retornar ao Início</a>
+    <div class="hint">Redirecionando automaticamente em 3 segundos...</div>
+  </div>
+</body>
+</html>

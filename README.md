@@ -1,79 +1,91 @@
-# Souza & Selly Advocacia (v2)
+# Souza & Selly Advocacia (v4)
 
-Landing page institucional de alto padrão desenvolvida para o escritório **Souza & Selly Advocacia**, combinando estética editorial contemporânea (*Dark & Gold*), conformidade estrita com o Código de Ética e Disciplina da OAB, tipografia refinada (*Libre Caslon Text* e *Hanken Grotesk*) e performance ultrarrápida.
+Landing page institucional e comercial de altíssimo padrão desenvolvida para o escritório **Souza & Selly Advocacia**, projetada com arquitetura moderna **Vite**, estética de luxo (*Obsidian Black & 24k Champagne Gold*), conformidade com o Código de Ética e Disciplina da OAB (Provimento 205/2021) e performance máxima.
 
 ---
 
 ## 🏛️ Sobre o Escritório
 
-- **Sócias Fundadoras:** Dra. Samara Selly e Dra. Mariana Souza
-- **Atuação:** Direito Previdenciário (INSS), Direito Trabalhista e Direito Cível
-- **Sede:** Av. Jovita Feitosa, nº 3072, Parquelândia, Fortaleza - CE, CEP 60455-410
-- **Horário de Atendimento:** 09:00 às 17:00 (Segunda a Sexta)
-- **Abrangência:** Todo o estado do Ceará (capital e interior)
+- **Sócias-Fundadoras:** Dra. Samara Selly e Dra. Mariana Souza
+- **Especialidades:**
+  - **Dra. Samara Selly:** Pós-graduada em Direito Previdenciário, Direito do Trabalho e Processo do Trabalho.
+  - **Dra. Mariana Souza:** Pós-graduada em Direito Previdenciário e Direito Tributário.
+- **Atuação:** Direito Previdenciário (INSS, BPC/LOAS, Rurais), Trabalhista e Cível/Família.
+- **Diferencial Humano:** Atendimento em todo o Ceará, com visitas domiciliares e presenciais dedicadas a clientes no interior do estado.
+- **Sede:** Av. Jovita Feitosa, nº 3072, Bairro Parquelândia, Fortaleza - CE, CEP 60455-410.
+- **Horário de Atendimento:** 09:00 às 17:00 (Segunda a Sexta).
 
 ---
 
-## 🚀 Destaques & Funcionalidades
+## 🚀 Tecnologias & Arquitetura
 
-- **Design Editorial Compacto & Equilibrado:** Tipografia e espaçamentos harmônicos, paleta dourada e preta com alto contraste e acessibilidade (WCAG 2.1 AA).
-- **Prova Social & Métricas:** Destaque para **8 anos** de história, **+7.000 causas**, **+3.000 famílias** amparadas e **184 municípios** atendidos com contadores numéricos animados.
-- **Mapa Interativo do Ceará (SVG Nativo):** Rotas dinâmicas a partir da sede em Fortaleza para as principais cidades do interior (Sobral, Crateús, Quixadá, Limoeiro do Norte, Iguatu e Juazeiro do Norte).
-- **Formulário Integrado ao WhatsApp:** Validação em tempo real, máscara de telefone `(85) 90000-0000` e redirecionamento instantâneo com mensagem formatada.
-- **Indicador de Horário em Tempo Real:** Verificação automática de expediente comercial baseada no horário de Fortaleza (UTC-3).
-- **Slider de Depoimentos & FAQ Interativo:** Componentes acessíveis via teclado e leitores de tela com atributos WAI-ARIA.
-- **SEO & Metadados Estruturados:** JSON-LD Schema.org (`LegalService`), Open Graph tags e favicon personalizado.
+- **Vite 6+**: Bundler ultrarrápido com Hot Module Replacement (HMR) e compilação em milissegundos.
+- **HTML5 Semântico**: Estrutura otimizada para SEO local e acessibilidade (WCAG 2.1 AA).
+- **CSS3 Puro Modular**: Design system próprio com paleta Dark Obsidian (`#070709`), Dourado Champanhe (`#D4AF37`), efeitos de vidro (glassmorphism) e micro-interações refinadas.
+- **Vercel Edge Ready**: Arquivo `vercel.json` pré-configurado com cabeçalhos de segurança (CSP, HSTS, X-Frame-Options) e cache imutável de assets estáticos.
 
 ---
 
-## 📁 Estrutura de Arquivos
+## 📁 Estrutura do Projeto
 
 ```text
-souza-e-selly-v2/
-├── assets/
-│   ├── favicon.svg          # Monograma vetorial dourado S&S
-│   ├── dra-samara.jpg       # Retrato institucional Dra. Samara Selly
-│   └── dra-mariana.jpg      # Retrato institucional Dra. Mariana Souza
+souza-e-selly-v4/
+├── assets/                  # Imagens institucionais em alta definição
+│   ├── logo.jpg             # Logotipo oficial circular com balança dourada
+│   ├── samara.jpg           # Retrato institucional Dra. Samara Selly
+│   ├── mariana.jpg          # Retrato institucional Dra. Mariana Souza
+│   ├── interior_ceara.jpg   # Cena documental de visita no interior do CE
+│   └── escritorio_sede.jpg  # Sala de reuniões da sede na Parquelândia
 ├── css/
-│   └── styles.css           # Design system completo e responsivo (Dark & Gold)
+│   └── styles.css           # Design system completo e responsivo
 ├── js/
-│   └── main.js              # Mapa SVG, slider, contadores, WhatsApp e validações
-├── index.html               # Estrutura semântica principal
-├── server.js                # Servidor local Node.js para testes offline
-├── vercel.json              # Configurações de deploy, cache e cabeçalhos de segurança na Vercel
-├── package.json             # Metadados do projeto
+│   └── main.js              # Lógica interativa (FAQ, abas, status e formulário)
+├── public/                  # Assets estáticos servidos pelo Vite
+├── index.html               # Ponto de entrada da aplicação
+├── 404.html                 # Página 404 personalizada
+├── vite.config.js           # Configuração de build do Vite
+├── vercel.json              # Configurações de deploy e segurança na Vercel
+├── package.json             # Scripts de dev, build e dependências
 └── README.md
 ```
 
 ---
 
-## 🛠️ Execução Local
-
-Você pode abrir o arquivo `index.html` diretamente em qualquer navegador moderno ou rodar o servidor local incluído:
+## 🛠️ Como Executar Localmente
 
 ```bash
-# Iniciar o servidor local na porta 3000
-node server.js
-```
+# 1. Instalar as dependências
+npm install
 
-Em seguida, acesse: `http://localhost:3000/`
+# 2. Iniciar o servidor de desenvolvimento Vite
+npm run dev
+
+# 3. Gerar a build otimizada de produção
+npm run build
+
+# 4. Pré-visualizar a build de produção localmente
+npm run preview
+```
 
 ---
 
 ## ⚡ Como Fazer o Deploy na Vercel
 
-### Opção 1: Via Dashboard da Vercel (Recomendado)
-1. Acesse [vercel.com](https://vercel.com) e faça login com sua conta do GitHub.
+### Opção 1: Conectando com o GitHub (Recomendado)
+1. Acesse [vercel.com](https://vercel.com) e conecte sua conta do GitHub.
 2. Clique em **"Add New..."** → **"Project"**.
-3. Selecione o repositório **`danieldiniz1999/souza-e-selly-v2`** e clique em **"Import"**.
-4. Mantenha as configurações padrão (o arquivo `vercel.json` e `index.html` serão detectados automaticamente).
-5. Clique em **"Deploy"**. Seu site estará no ar em poucos segundos com SSL automático e CDN global.
+3. Selecione o repositório **`danieldiniz1999/souza-e-selly-v4`**.
+4. A Vercel detectará automaticamente o framework como **Vite**:
+   - **Framework Preset:** `Vite`
+   - **Build Command:** `vite build`
+   - **Output Directory:** `dist`
+5. Clique em **"Deploy"**. Seu site estará no ar em poucos segundos!
 
-### Opção 2: Via Vercel CLI
+### Opção 2: Via Vercel CLI no Terminal
 ```bash
-npx vercel
-```
-Siga as instruções rápidas no terminal e confirme para publicar em produção:
-```bash
-npx vercel --prod
+# Instalar a CLI da Vercel (se necessário)
+npm i -g vercel
+
+# Executar o deploy
+vercel --prod
 ```

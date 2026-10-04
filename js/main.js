@@ -103,17 +103,25 @@
   }
 
   /* ==========================================================================
-     2. BARRA DE PROGRESSO DE SCROLL
+     2. BARRA DE PROGRESSO DE SCROLL & BOTÃO FLUTUANTE
      ========================================================================== */
   function initProgressBar() {
     const progressBar = document.querySelector('.progress span');
-    if (!progressBar) return;
+    const floatCta = document.querySelector('.float-cta');
 
     window.addEventListener('scroll', () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      progressBar.style.width = `${progress}%`;
+      if (progressBar) progressBar.style.width = `${progress}%`;
+
+      if (floatCta) {
+        if (scrollTop > 260) {
+          floatCta.classList.add('is-visible');
+        } else {
+          floatCta.classList.remove('is-visible');
+        }
+      }
     }, { passive: true });
   }
 
@@ -200,33 +208,72 @@
     const revealEls = document.querySelectorAll('[data-reveal]');
     const staggerContainers = document.querySelectorAll('[data-stagger]');
 
-    const revealObserver = new IntersectionObserver((entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          obs.unobserve(entry.target);
+    function revealElement(el) {
+      el.classList.add('revealed');
+    }
+
+    function revealStagger(container) {
+      const children = Array.from(container.children);
+      children.forEach((child, idx) => {
+        setTimeout(() => {
+          child.classList.add('revealed');
+        }, idx * 100);
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      const observerOptions = {
+        root: null,
+        rootMargin: '100px 0px 50px 0px',
+        threshold: 0.02
+      };
+
+      const revealObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            revealElement(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      revealEls.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 150) {
+          revealElement(el);
+        } else {
+          revealObserver.observe(el);
         }
       });
-    }, { threshold: 0.15 });
 
-    revealEls.forEach((el) => revealObserver.observe(el));
+      const staggerObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            revealStagger(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
 
-    // Stagger containers
-    const staggerObserver = new IntersectionObserver((entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const children = entry.target.children;
-          Array.from(children).forEach((child, idx) => {
-            setTimeout(() => {
-              child.classList.add('revealed');
-            }, idx * 120);
-          });
-          obs.unobserve(entry.target);
+      staggerContainers.forEach((container) => {
+        const rect = container.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 150) {
+          revealStagger(container);
+        } else {
+          staggerObserver.observe(container);
         }
       });
-    }, { threshold: 0.15 });
+    } else {
+      // Fallback sem IntersectionObserver
+      revealEls.forEach(revealElement);
+      staggerContainers.forEach(revealStagger);
+    }
 
-    staggerContainers.forEach((container) => staggerObserver.observe(container));
+    // Safety fallback: garante que nada fique oculto após 1.2s
+    setTimeout(() => {
+      revealEls.forEach(revealElement);
+      staggerContainers.forEach(revealStagger);
+    }, 1200);
   }
 
   /* ==========================================================================
