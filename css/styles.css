@@ -590,12 +590,14 @@ h1, h2, h3, h4, .font-serif {
   align-items: center;
   justify-content: center;
   filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.15));
+  will-change: transform;
+  transform: translateZ(0);
   animation: mapGentleFloat 8s ease-in-out infinite alternate;
 }
 
 @keyframes mapGentleFloat {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-7px); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, -7px, 0); }
 }
 
 .ceara-interactive-svg {
@@ -811,6 +813,19 @@ h1, h2, h3, h4, .font-serif {
   background-color: var(--bg-surface);
   border-top: 1px solid var(--gold-border);
   border-bottom: 1px solid var(--gold-border);
+}
+
+/* Otimização Core Web Vitals: renderização sob demanda para seções abaixo da dobra */
+#interior,
+#areas,
+#advogadas,
+#processo,
+#sede,
+#depoimentos,
+#faq,
+#contato {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 750px;
 }
 
 .section-head {
@@ -1661,6 +1676,8 @@ button:active,
   z-index: 1001;
   pointer-events: none;
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.85);
+  will-change: width;
+  transform: translateZ(0);
   transition: width 0.08s ease-out;
 }
 

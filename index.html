@@ -16,6 +16,11 @@
   <!-- Favicon -->
   <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
 
+  <!-- Preconnect & Fontes com display=swap (Zero bloqueio de renderização) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <!-- CSS Principal -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -26,7 +31,10 @@
     <div class="container header-inner">
       <a href="#inicio" class="brand-wrapper">
         <div class="brand-logo-ring">
-          <img src="assets/logo.jpg" alt="Logo Souza &amp; Selly Advocacia">
+          <picture>
+            <source srcset="assets/logo.webp" type="image/webp">
+            <img src="assets/logo.jpg" alt="Logo Souza &amp; Selly Advocacia" width="48" height="48" fetchpriority="high" loading="eager" decoding="async">
+          </picture>
         </div>
         <div>
           <span class="brand-title">SOUZA &amp; SELLY</span>
@@ -68,7 +76,10 @@
     <div class="drawer-header">
       <div class="brand-wrapper">
         <div class="brand-logo-ring" style="width: 2.5rem; height: 2.5rem;">
-          <img src="assets/logo.jpg" alt="Logo Souza &amp; Selly">
+          <picture>
+            <source srcset="assets/logo.webp" type="image/webp">
+            <img src="assets/logo.jpg" alt="Logo Souza &amp; Selly" width="40" height="40" loading="lazy" decoding="async">
+          </picture>
         </div>
         <div>
           <span class="brand-title" style="font-size: 1.05rem;">SOUZA &amp; SELLY</span>
@@ -193,7 +204,7 @@
                   </defs>
 
                   <!-- 1. Imagem Base do Mapa (Fiel ao Design Enviado) -->
-                  <image href="assets/mapa-ceara.png" x="0" y="0" width="400" height="398" class="map-raster-base" />
+                  <image href="assets/mapa-ceara.webp" x="0" y="0" width="400" height="398" class="map-raster-base" />
 
                   <!-- 2. Arcos Vetoriais Interativos -->
                   <g class="map-vector-arcs">
@@ -426,7 +437,10 @@
           <!-- Fotografia Editorial do Interior -->
           <div>
             <div style="border-radius: 1.25rem; overflow: hidden; border: 2px solid var(--gold-border-bright); box-shadow: 0 20px 45px rgba(0,0,0,0.8); position: relative;">
-              <img src="assets/interior_ceara.jpg" alt="Dra. Samara Selly e Dra. Maria Souza em visita a clientes no interior do Ceará" style="width: 100%; height: auto; display: block;">
+              <picture>
+                <source srcset="assets/interior_ceara.webp" type="image/webp">
+                <img src="assets/interior_ceara.jpg" alt="Dra. Samara Selly e Dra. Maria Souza em visita a clientes no interior do Ceará" width="800" height="600" loading="lazy" decoding="async" style="width: 100%; height: auto; display: block;">
+              </picture>
               <div style="position: absolute; bottom: 0; inset-inline: 0; background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.95) 100%); padding: 1.5rem; color: #FFF;">
                 <p style="font-size: 0.75rem; color: var(--gold-300); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem;">
                   Visitas Domiciliares Programadas no Interior
@@ -692,7 +706,10 @@
           <div class="lawyer-card">
             <div style="display: grid; grid-template-columns: 1fr;" class="lawyer-inner-grid">
               <div class="lawyer-img-wrap">
-                <img src="assets/samara.jpg" alt="Dra. Samara Selly">
+                <picture>
+                  <source srcset="assets/samara.webp" type="image/webp">
+                  <img src="assets/samara.jpg" alt="Dra. Samara Selly" width="600" height="750" loading="lazy" decoding="async">
+                </picture>
               </div>
               <div style="padding: 1.35rem;">
                 <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
@@ -745,7 +762,10 @@
           <div class="lawyer-card">
             <div style="display: grid; grid-template-columns: 1fr;" class="lawyer-inner-grid">
               <div class="lawyer-img-wrap">
-                <img src="assets/mariana.jpg" alt="Dra. Maria Souza">
+                <picture>
+                  <source srcset="assets/mariana.webp" type="image/webp">
+                  <img src="assets/mariana.jpg" alt="Dra. Maria Souza" width="600" height="750" loading="lazy" decoding="async">
+                </picture>
               </div>
               <div style="padding: 1.35rem;">
                 <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
@@ -860,7 +880,10 @@
         <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;" class="interior-grid">
           <div>
             <div style="border-radius: 1.25rem; overflow: hidden; border: 2px solid var(--gold-border-bright); box-shadow: 0 20px 45px rgba(0,0,0,0.8); position: relative;">
-              <img src="assets/escritorio_sede.jpg" alt="Sala de Reuniões Souza &amp; Selly Advocacia na Parquelândia Fortaleza" style="width: 100%; height: auto; display: block;">
+              <picture>
+                <source srcset="assets/escritorio_sede.webp" type="image/webp">
+                <img src="assets/escritorio_sede.jpg" alt="Sala de Reuniões Souza &amp; Selly Advocacia na Parquelândia Fortaleza" width="800" height="600" loading="lazy" decoding="async" style="width: 100%; height: auto; display: block;">
+              </picture>
               <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(7,7,9,0.85); backdrop-filter: blur(10px); padding: 0.35rem 0.85rem; border-radius: 9999px; border: 1px solid var(--gold-border); font-size: 0.75rem; color: var(--gold-300);">
                 Sede Regional Fortaleza · Bairro Parquelândia
               </div>
@@ -1243,7 +1266,10 @@
         <div style="grid-column: span 1.5;">
           <div style="display: flex; align-items: center; gap: 0.75rem;">
             <div style="width: 3rem; height: 3rem; border-radius: 50%; border: 2px solid var(--gold-400); overflow: hidden; background: #000;">
-              <img src="assets/logo.jpg" alt="Logo Souza &amp; Selly" style="width: 100%; height: 100%; object-fit: cover;">
+              <picture>
+                <source srcset="assets/logo.webp" type="image/webp">
+                <img src="assets/logo.jpg" alt="Logo Souza &amp; Selly" width="48" height="48" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
+              </picture>
             </div>
             <div>
               <span style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: #FFFDF5; display: block;">SOUZA &amp; SELLY</span>
@@ -1330,7 +1356,10 @@
 
     <a href="https://wa.me/5585999999999?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20escrit%C3%B3rio%20Souza%20%26%20Selly%20Advocacia." target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Falar no WhatsApp">
       <div class="wa-btn-ring"></div>
-      <img src="assets/logo.jpg" alt="WhatsApp Souza &amp; Selly" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+      <picture>
+        <source srcset="assets/logo.webp" type="image/webp">
+        <img src="assets/logo.jpg" alt="WhatsApp Souza &amp; Selly" width="56" height="56" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+      </picture>
     </a>
   </div>
 
