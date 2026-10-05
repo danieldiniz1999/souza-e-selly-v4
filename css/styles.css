@@ -189,6 +189,20 @@ h1, h2, h3, h4, .font-serif {
   }
 }
 
+@media (min-width: 1024px) and (max-width: 1220px) {
+  .nav-links {
+    gap: 0.8rem;
+  }
+  .nav-link {
+    font-size: 0.64rem;
+    letter-spacing: 0.04em;
+  }
+  .header-cta {
+    padding: 0.38rem 0.8rem !important;
+    font-size: 0.65rem !important;
+  }
+}
+
 .nav-link {
   font-size: 0.675rem;
   font-weight: 500;
