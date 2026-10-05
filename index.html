@@ -175,57 +175,259 @@
             </div>
           </div>
 
-          <!-- Coluna Card Vitrine -->
+          <!-- Coluna Card Mapa Vivo do Ceará (Efeitos, Animações e Rotas Ativas) -->
           <div>
-            <div class="showcase-card">
+            <div class="showcase-card ceara-map-showcase" id="cearaMapCard">
               <div class="corner-accent corner-tl"></div>
               <div class="corner-accent corner-tr"></div>
               <div class="corner-accent corner-bl"></div>
               <div class="corner-accent corner-br"></div>
 
-              <div style="text-align: center; padding-bottom: 1.15rem; border-bottom: 1px solid var(--gold-border);">
-                <div style="width: 5.25rem; height: 5.25rem; border-radius: 50%; border: 2px solid var(--gold-400); box-shadow: 0 0 22px var(--gold-glow); overflow: hidden; margin: 0 auto; background: #000;">
-                  <img src="assets/logo.jpg" alt="Brasão Souza &amp; Selly" style="width: 100%; height: 100%; object-fit: cover;">
+              <!-- Topo do Card: Status e Cobertura -->
+              <div class="map-showcase-header">
+                <div class="map-badge-wrap">
+                  <span class="status-dot-pulse"></span>
+                  <span class="map-badge-text">ROTAS ATIVAS · CEARÁ</span>
                 </div>
-                <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: #FFFDF5; margin-top: 0.75rem; font-weight: 700;">Souza &amp; Selly</h3>
-                <p style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold-300); font-weight: 600; margin-top: 0.2rem;">Advocacia Especializada &amp; Consultoria</p>
-                <p style="font-size: 0.72rem; color: var(--text-dim); margin-top: 0.2rem;">Sede Parquelândia · Fortaleza / CE</p>
+                <h3 class="map-header-title">Atendimento em Todo o Ceará</h3>
+                <p class="map-header-sub">Sede em Fortaleza com visitas presenciais e itinerantes em 184 municípios</p>
               </div>
 
-              <div style="padding-top: 1.25rem; padding-bottom: 1.25rem;">
-                <!-- Dra. Samara Selly -->
-                <div class="lawyer-chip">
-                  <div class="lawyer-chip-avatar">
-                    <img src="assets/samara.jpg" alt="Dra. Samara Selly">
-                  </div>
-                  <div>
-                    <h4 style="font-family: var(--font-serif); font-size: 1rem; font-weight: 700; color: #FFFDF5;">Dra. Samara Selly</h4>
-                    <p style="font-size: 0.75rem; color: var(--gold-300); font-weight: 600;">Sócia-Fundadora</p>
-                    <p style="font-size: 0.7rem; color: var(--text-muted);">Pós-Graduada em Previdenciário e Trabalhista</p>
-                  </div>
-                </div>
+              <!-- Container Visual do Mapa com Efeitos e Animações -->
+              <div class="map-visual-container">
+                <div class="map-svg-wrapper">
+                  <svg class="ceara-interactive-svg" viewBox="0 0 400 398" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" aria-label="Mapa animado do Ceará com rotas da Souza e Selly">
+                    <defs>
+                      <!-- Filtro de Glow Dourado para Feixes de Energia -->
+                      <filter id="gold-beam-glow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur1" />
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur2" />
+                        <feMerge>
+                          <feMergeNode in="blur1" />
+                          <feMergeNode in="blur2" />
+                          <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                      </filter>
 
-                <!-- Dra. Maria Souza -->
-                <div class="lawyer-chip" style="margin-bottom: 0;">
-                  <div class="lawyer-chip-avatar">
-                    <img src="assets/mariana.jpg" alt="Dra. Maria Souza">
-                  </div>
-                  <div>
-                    <h4 style="font-family: var(--font-serif); font-size: 1rem; font-weight: 700; color: #FFFDF5;">Dra. Maria Souza</h4>
-                    <p style="font-size: 0.75rem; color: var(--gold-300); font-weight: 600;">Sócia-Fundadora</p>
-                    <p style="font-size: 0.7rem; color: var(--text-muted);">Pós-Graduada em Previdenciário e Tributário</p>
+                      <!-- Gradiente Dourado dos Arcos -->
+                      <linearGradient id="arc-gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#FFEAA7" stop-opacity="0.95" />
+                        <stop offset="60%" stop-color="#D4AF37" stop-opacity="0.6" />
+                        <stop offset="100%" stop-color="#AA771C" stop-opacity="0.3" />
+                      </linearGradient>
+                    </defs>
+
+                    <!-- 1. Imagem Base de Alta Fidelidade (Exata do Design do Cliente) -->
+                    <image href="assets/mapa-ceara.png" x="0" y="0" width="400" height="398" class="map-raster-base" />
+
+                    <!-- 2. Arcos Vetoriais Interativos de Destaque -->
+                    <g class="map-vector-arcs">
+                      <path id="path-sobral" class="map-connection-arc" d="M 264,104 Q 224,55 144,106" />
+                      <path id="path-crateus" class="map-connection-arc" d="M 264,104 Q 188,120 120,204" />
+                      <path id="path-quixada" class="map-connection-arc" d="M 264,104 Q 241,124 235,188" />
+                      <path id="path-limoeiro" class="map-connection-arc" d="M 264,104 Q 279,129 298,198" />
+                      <path id="path-iguatu" class="map-connection-arc" d="M 264,104 Q 234,157 208,282" />
+                      <path id="path-juazeiro" class="map-connection-arc" d="M 264,104 Q 263,201 210,342" />
+                    </g>
+
+                    <!-- 3. Feixes de Luz / Pulsos Dourados em Movimento Contínuo (Traveling Light Beams) -->
+                    <g class="map-traveling-beams">
+                      <!-- Rota Fortaleza -> Sobral -->
+                      <g class="travel-beam-group">
+                        <circle r="3.2" fill="#FFFDF5" filter="url(#gold-beam-glow)">
+                          <animateMotion dur="2.4s" repeatCount="indefinite" path="M 264,104 Q 224,55 144,106" />
+                        </circle>
+                        <circle r="6.5" fill="none" stroke="#FFEAA7" stroke-width="1.4" opacity="0.75" filter="url(#gold-beam-glow)">
+                          <animateMotion dur="2.4s" repeatCount="indefinite" path="M 264,104 Q 224,55 144,106" />
+                        </circle>
+                      </g>
+
+                      <!-- Rota Fortaleza -> Crateús -->
+                      <g class="travel-beam-group">
+                        <circle r="3.2" fill="#FFFDF5" filter="url(#gold-beam-glow)">
+                          <animateMotion dur="2.9s" repeatCount="indefinite" path="M 264,104 Q 188,120 120,204" />
+                        </circle>
+                        <circle r="6.5" fill="none" stroke="#FFEAA7" stroke-width="1.4" opacity="0.75" filter="url(#gold-beam-glow)">
+                          <animateMotion dur="2.9s" repeatCount="indefinite" path="M 264,104 Q 188,120 120,204" />
+                        </circle>
+                      </g>
+
+                      <!-- Rota Fortaleza -> Quixadá -->
+                      <g class="travel-beam-group">
+                        <circle r="3.2" fill="#FFFDF5" filter="url(#gold-beam-glow)">
+                          <animateMotion dur="2.2s" repeatCount="indefinite" path="M 264,104 Q 241,124 235,188" />
+                        </circle>
+                        <circle r="6.5" fill="none" stroke="#FFEAA7" stroke-width="1.4" opacity="0.75" filter="url(#gold-beam-glow)">
+                          <animateMotion dur="2.2s" repeatCount="indefinite" path="M 264,104 Q 241,124 235,188" />
+                        </circle>
+                      </g>
+
+                      <!-- Rota Fortaleza -> Limoeiro do Norte -->
+                      <g class="travel-beam-group">
+                        <circle r="3.2" fill="#FFFDF5" filter="url(#gold-beam-glow)">
+                          <animateMotion dur="2.6s" repeatCount="indefinite" path="M 264,104 Q 279,129 298,198" />
+                        </circle>
+                        <circle r="6.5" fill="none" stroke="#FFEAA7" stroke-width="1.4" opacity="0.75" filter="url(#gold-beam-glow)">
+                          <animateMotion dur="2.6s" repeatCount="indefinite" path="M 264,104 Q 279,129 298,198" />
+                        </circle>
+                      </g>
+
+                      <!-- Rota Fortaleza -> Iguatu -->
+                      <g class="travel-beam-group">
+                        <circle r="3.2" fill="#FFFDF5" filter="url(#gold-beam-glow)">
+                          <animateMotion dur="3.1s" repeatCount="indefinite" path="M 264,104 Q 234,157 208,282" />
+                        </circle>
+                        <circle r="6.5" fill="none" stroke="#FFEAA7" stroke-width="1.4" opacity="0.75" filter="url(#gold-beam-glow)">
+                          <animateMotion dur="3.1s" repeatCount="indefinite" path="M 264,104 Q 234,157 208,282" />
+                        </circle>
+                      </g>
+
+                      <!-- Rota Fortaleza -> Juazeiro do Norte -->
+                      <g class="travel-beam-group">
+                        <circle r="3.2" fill="#FFFDF5" filter="url(#gold-beam-glow)">
+                          <animateMotion dur="3.4s" repeatCount="indefinite" path="M 264,104 Q 263,201 210,342" />
+                        </circle>
+                        <circle r="6.5" fill="none" stroke="#FFEAA7" stroke-width="1.4" opacity="0.75" filter="url(#gold-beam-glow)">
+                          <animateMotion dur="3.4s" repeatCount="indefinite" path="M 264,104 Q 263,201 210,342" />
+                        </circle>
+                      </g>
+                    </g>
+
+                    <!-- 4. Ondas Radar Concéntricas (Radar Ping Ripples com SVG Nativo) -->
+                    <g class="map-radar-ripples">
+                      <!-- Fortaleza (Sede Principal) - Pulso Duplo Dourado -->
+                      <circle cx="264" cy="104" r="5" fill="none" stroke="#FFEAA7">
+                        <animate attributeName="r" values="5;26" dur="2.4s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.9;0" dur="2.4s" repeatCount="indefinite" />
+                        <animate attributeName="stroke-width" values="1.8;0.4" dur="2.4s" repeatCount="indefinite" />
+                      </circle>
+                      <circle cx="264" cy="104" r="5" fill="none" stroke="#FFEAA7">
+                        <animate attributeName="r" values="5;26" dur="2.4s" begin="1.2s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.9;0" dur="2.4s" begin="1.2s" repeatCount="indefinite" />
+                        <animate attributeName="stroke-width" values="1.8;0.4" dur="2.4s" begin="1.2s" repeatCount="indefinite" />
+                      </circle>
+
+                      <!-- Polos do Interior: Radar Pings Staggered -->
+                      <circle cx="144" cy="106" r="4" fill="none" stroke="#FFEAA7">
+                        <animate attributeName="r" values="4;16" dur="2.6s" begin="0.2s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.85;0" dur="2.6s" begin="0.2s" repeatCount="indefinite" />
+                        <animate attributeName="stroke-width" values="1.4;0.3" dur="2.6s" begin="0.2s" repeatCount="indefinite" />
+                      </circle>
+                      <circle cx="120" cy="204" r="4" fill="none" stroke="#FFEAA7">
+                        <animate attributeName="r" values="4;16" dur="2.8s" begin="0.8s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.85;0" dur="2.8s" begin="0.8s" repeatCount="indefinite" />
+                        <animate attributeName="stroke-width" values="1.4;0.3" dur="2.8s" begin="0.8s" repeatCount="indefinite" />
+                      </circle>
+                      <circle cx="235" cy="188" r="4" fill="none" stroke="#FFEAA7">
+                        <animate attributeName="r" values="4;16" dur="2.5s" begin="1.4s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.85;0" dur="2.5s" begin="1.4s" repeatCount="indefinite" />
+                        <animate attributeName="stroke-width" values="1.4;0.3" dur="2.5s" begin="1.4s" repeatCount="indefinite" />
+                      </circle>
+                      <circle cx="298" cy="198" r="4" fill="none" stroke="#FFEAA7">
+                        <animate attributeName="r" values="4;16" dur="2.7s" begin="0.5s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.85;0" dur="2.7s" begin="0.5s" repeatCount="indefinite" />
+                        <animate attributeName="stroke-width" values="1.4;0.3" dur="2.7s" begin="0.5s" repeatCount="indefinite" />
+                      </circle>
+                      <circle cx="208" cy="282" r="4" fill="none" stroke="#FFEAA7">
+                        <animate attributeName="r" values="4;16" dur="3.0s" begin="1.7s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.85;0" dur="3.0s" begin="1.7s" repeatCount="indefinite" />
+                        <animate attributeName="stroke-width" values="1.4;0.3" dur="3.0s" begin="1.7s" repeatCount="indefinite" />
+                      </circle>
+                      <circle cx="210" cy="342" r="4" fill="none" stroke="#FFEAA7">
+                        <animate attributeName="r" values="4;18" dur="2.9s" begin="1.0s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.85;0" dur="2.9s" begin="1.0s" repeatCount="indefinite" />
+                        <animate attributeName="stroke-width" values="1.4;0.3" dur="2.9s" begin="1.0s" repeatCount="indefinite" />
+                      </circle>
+                    </g>
+
+                    <!-- 5. Hotspots Interativos com Acessibilidade e Cliques Rápidos -->
+                    <g class="map-interactive-nodes">
+                      <!-- Hub Fortaleza -->
+                      <g class="map-node-interactive is-active" data-city-id="fortaleza" data-city-name="Fortaleza (Sede Central)" data-city-desc="Sede na Parquelândia · Atendimento Presencial &amp; Online" data-city-msg="Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento%20na%20sede%20de%20Fortaleza.">
+                        <circle cx="264" cy="104" r="20" class="map-node-hitbox" />
+                        <polygon points="264,96 272,104 264,112 256,104" class="map-diamond-hub" />
+                      </g>
+
+                      <!-- Sobral -->
+                      <g class="map-node-interactive" data-city-id="sobral" data-city-name="Sobral" data-city-desc="Polo Região Norte · Visitas Domiciliares &amp; Audiências" data-city-msg="Ol%C3%A1%2C%20gostaria%20de%20atendimento%20da%20Souza%20%26%20Selly%20para%20a%20regi%C3%A3o%20de%20Sobral.">
+                        <circle cx="144" cy="106" r="18" class="map-node-hitbox" />
+                        <circle cx="144" cy="106" r="6" class="map-node-halo" />
+                        <circle cx="144" cy="106" r="2.8" class="map-node-core" />
+                      </g>
+
+                      <!-- Crateús -->
+                      <g class="map-node-interactive" data-city-id="crateus" data-city-name="Crateús" data-city-desc="Polo Sertão dos Crateús · Atendimento Especializado" data-city-msg="Ol%C3%A1%2C%20gostaria%20de%20atendimento%20da%20Souza%20%26%20Selly%20para%20a%20regi%C3%A3o%20de%20Crate%C3%BAs.">
+                        <circle cx="120" cy="204" r="18" class="map-node-hitbox" />
+                        <circle cx="120" cy="204" r="6" class="map-node-halo" />
+                        <circle cx="120" cy="204" r="2.8" class="map-node-core" />
+                      </g>
+
+                      <!-- Quixadá -->
+                      <g class="map-node-interactive" data-city-id="quixada" data-city-name="Quixadá" data-city-desc="Polo Sertão Central · Visitas Presenciais" data-city-msg="Ol%C3%A1%2C%20gostaria%20de%20atendimento%20da%20Souza%20%26%20Selly%20para%20a%20regi%C3%A3o%20de%20Quixad%C3%A1.">
+                        <circle cx="235" cy="188" r="18" class="map-node-hitbox" />
+                        <circle cx="235" cy="188" r="6" class="map-node-halo" />
+                        <circle cx="235" cy="188" r="2.8" class="map-node-core" />
+                      </g>
+
+                      <!-- Limoeiro do Norte -->
+                      <g class="map-node-interactive" data-city-id="limoeiro" data-city-name="Limoeiro do Norte" data-city-desc="Polo Vale do Jaguaribe · Defesa de Direitos" data-city-msg="Ol%C3%A1%2C%20gostaria%20de%20atendimento%20da%20Souza%20%26%20Selly%20para%20a%20regi%C3%A3o%20de%20Limoeiro%20do%20Norte.">
+                        <circle cx="298" cy="198" r="18" class="map-node-hitbox" />
+                        <circle cx="298" cy="198" r="6" class="map-node-halo" />
+                        <circle cx="298" cy="198" r="2.8" class="map-node-core" />
+                      </g>
+
+                      <!-- Iguatu -->
+                      <g class="map-node-interactive" data-city-id="iguatu" data-city-name="Iguatu" data-city-desc="Polo Centro-Sul Cearense · Suporte Jurídico" data-city-msg="Ol%C3%A1%2C%20gostaria%20de%20atendimento%20da%20Souza%20%26%20Selly%20para%20a%20regi%C3%A3o%20de%20Iguatu.">
+                        <circle cx="208" cy="282" r="18" class="map-node-hitbox" />
+                        <circle cx="208" cy="282" r="6" class="map-node-halo" />
+                        <circle cx="208" cy="282" r="2.8" class="map-node-core" />
+                      </g>
+
+                      <!-- Juazeiro do Norte -->
+                      <g class="map-node-interactive" data-city-id="juazeiro" data-city-name="Juazeiro do Norte" data-city-desc="Polo Região do Cariri · Atendimento Presencial &amp; Domiciliar" data-city-msg="Ol%C3%A1%2C%20gostaria%20de%20atendimento%20da%20Souza%20%26%20Selly%20para%20a%20regi%C3%A3o%20do%20Cariri%20%2F%20Juazeiro.">
+                        <circle cx="210" cy="342" r="18" class="map-node-hitbox" />
+                        <circle cx="210" cy="342" r="6" class="map-node-halo" />
+                        <circle cx="210" cy="342" r="2.8" class="map-node-core" />
+                      </g>
+                    </g>
+                  </svg>
+
+                  <!-- Tooltip Flutuante Dinâmico do Mapa -->
+                  <div class="map-floating-tooltip" id="mapTooltip" aria-live="polite">
+                    <div class="map-tooltip-header">
+                      <span class="map-tooltip-dot"></span>
+                      <strong class="map-tooltip-city" id="tooltipCity">Fortaleza (Sede Central)</strong>
+                    </div>
+                    <p class="map-tooltip-desc" id="tooltipDesc">Sede na Parquelândia · Atendimento Presencial &amp; Online</p>
+                    <a href="https://wa.me/5585999999999?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento%20na%20sede%20de%20Fortaleza." class="map-tooltip-link" id="tooltipLink" target="_blank" rel="noopener noreferrer">
+                      <span>Agendar nesta Região</span>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
                   </div>
                 </div>
               </div>
 
-              <div style="padding-top: 1rem; border-top: 1px solid var(--gold-border); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem;">
-                <span style="color: var(--text-muted); display: flex; align-items: center; gap: 0.35rem;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold-400)" stroke-width="2"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-                  Visitas em Todo o Interior
-                </span>
-                <span style="padding: 0.2rem 0.6rem; border-radius: 4px; background: rgba(212,175,55,0.15); color: var(--gold-300); font-weight: 700; border: 1px solid var(--gold-border);">
-                  Atendimento Presencial
-                </span>
+              <!-- Rodapé do Card: Chips Rápidos + CTA -->
+              <div class="map-showcase-footer">
+                <div class="map-chips-header">
+                  <span class="map-chips-title">Polos com Visitas Domiciliares:</span>
+                </div>
+                <div class="map-chips-container">
+                  <button type="button" class="map-chip is-active" data-city-target="fortaleza">📍 Fortaleza</button>
+                  <button type="button" class="map-chip" data-city-target="sobral">Sobral</button>
+                  <button type="button" class="map-chip" data-city-target="juazeiro">Juazeiro</button>
+                  <button type="button" class="map-chip" data-city-target="crateus">Crateús</button>
+                  <button type="button" class="map-chip" data-city-target="quixada">Quixadá</button>
+                  <button type="button" class="map-chip" data-city-target="iguatu">Iguatu</button>
+                  <button type="button" class="map-chip" data-city-target="limoeiro">Limoeiro</button>
+                </div>
+
+                <div class="map-action-box">
+                  <a href="https://wa.me/5585999999999?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20visita%20ou%20atendimento%20da%20Souza%20%26%20Selly%20para%20minha%20cidade." target="_blank" rel="noopener noreferrer" class="btn-gold map-action-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    <span>Solicitar Atendimento na Minha Região</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

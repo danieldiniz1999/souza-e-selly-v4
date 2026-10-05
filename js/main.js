@@ -441,6 +441,112 @@
   }
 
   /* ==========================================================================
+     12. MAPA INTERATIVO DO CEARÁ (ROTAS, HOVER, TOOLTIP E CHIPS)
+     ========================================================================== */
+  function initCearaMap() {
+    const card = document.getElementById('cearaMapCard');
+    if (!card) return;
+
+    const nodes = card.querySelectorAll('.map-node-interactive');
+    const chips = card.querySelectorAll('.map-chip');
+    const arcs = card.querySelectorAll('.map-connection-arc');
+    const tooltipCity = document.getElementById('tooltipCity');
+    const tooltipDesc = document.getElementById('tooltipDesc');
+    const tooltipLink = document.getElementById('tooltipLink');
+
+    const cityData = {
+      fortaleza: {
+        name: 'Fortaleza (Sede Central)',
+        desc: 'Sede na Parquelândia · Atendimento Presencial & Online',
+        msg: 'Olá! Gostaria de agendar um atendimento na sede de Fortaleza da Souza & Selly.'
+      },
+      sobral: {
+        name: 'Sobral (Polo Norte)',
+        desc: 'Visitas Domiciliares & Audiências em toda a Região Norte',
+        msg: 'Olá! Gostaria de atendimento da Souza & Selly para a região de Sobral.'
+      },
+      juazeiro: {
+        name: 'Juazeiro do Norte (Cariri)',
+        desc: 'Atendimento Domiciliar e Presencial (Juazeiro, Crato e Barbalha)',
+        msg: 'Olá! Gostaria de atendimento da Souza & Selly para a região do Cariri / Juazeiro do Norte.'
+      },
+      crateus: {
+        name: 'Crateús (Sertão Ocidental)',
+        desc: 'Visitas Periódicas · Defesa de Trabalhadores e Aposentados',
+        msg: 'Olá! Gostaria de atendimento da Souza & Selly para a região de Crateús.'
+      },
+      quixada: {
+        name: 'Quixadá (Sertão Central)',
+        desc: 'Polo Sertão Central · Visitas Presenciais e Coleta de Documentos',
+        msg: 'Olá! Gostaria de atendimento da Souza & Selly para a região de Quixadá.'
+      },
+      iguatu: {
+        name: 'Iguatu (Centro-Sul)',
+        desc: 'Polo Centro-Sul Cearense · Suporte Jurídico Especializado',
+        msg: 'Olá! Gostaria de atendimento da Souza & Selly para a região de Iguatu.'
+      },
+      limoeiro: {
+        name: 'Limoeiro do Norte (Jaguaribe)',
+        desc: 'Polo Vale do Jaguaribe · Defesa de Direitos Trabalhistas e Previdenciários',
+        msg: 'Olá! Gostaria de atendimento da Souza & Selly para a região de Limoeiro do Norte.'
+      }
+    };
+
+    function selectCity(cityId, shouldOpenWhatsApp = false) {
+      const data = cityData[cityId] || cityData.fortaleza;
+
+      nodes.forEach((n) => {
+        if (n.getAttribute('data-city-id') === cityId) {
+          n.classList.add('is-active');
+        } else {
+          n.classList.remove('is-active');
+        }
+      });
+
+      chips.forEach((c) => {
+        if (c.getAttribute('data-city-target') === cityId) {
+          c.classList.add('is-active');
+        } else {
+          c.classList.remove('is-active');
+        }
+      });
+
+      arcs.forEach((a) => {
+        if (a.id === `path-${cityId}`) {
+          a.classList.add('is-active');
+        } else {
+          a.classList.remove('is-active');
+        }
+      });
+
+      if (tooltipCity) tooltipCity.textContent = data.name;
+      if (tooltipDesc) tooltipDesc.textContent = data.desc;
+      if (tooltipLink) {
+        tooltipLink.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(data.msg)}`;
+      }
+
+      if (shouldOpenWhatsApp) {
+        window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(data.msg)}`, '_blank', 'noopener,noreferrer');
+      }
+    }
+
+    nodes.forEach((node) => {
+      const cityId = node.getAttribute('data-city-id');
+      node.addEventListener('mouseenter', () => selectCity(cityId, false));
+      node.addEventListener('focus', () => selectCity(cityId, false));
+      node.addEventListener('click', () => selectCity(cityId, true));
+    });
+
+    chips.forEach((chip) => {
+      const cityId = chip.getAttribute('data-city-target');
+      chip.addEventListener('click', (e) => {
+        e.preventDefault();
+        selectCity(cityId, false);
+      });
+    });
+  }
+
+  /* ==========================================================================
      INICIALIZAÇÃO NO DOM READY
      ========================================================================== */
   function init() {
@@ -451,6 +557,7 @@
     setupPhoneMask();
     initScrollReveal();
     setupRegionChips();
+    initCearaMap();
   }
 
   if (document.readyState === 'loading') {

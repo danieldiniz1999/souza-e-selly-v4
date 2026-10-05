@@ -15,8 +15,8 @@ node_modules/
 dist/
 
 # Build and preview artifacts
-*.png
 .vercel
+/screenshot*.png
 
 # Environment variables
 .env
