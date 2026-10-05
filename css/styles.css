@@ -558,83 +558,56 @@ h1, h2, h3, h4, .font-serif {
 .corner-br { bottom: 0.75rem; right: 0.75rem; border-bottom: 2px solid; border-right: 2px solid; }
 
 /* ==========================================================================
-   CARD VITRINE: MAPA ANIMADO DO CEARÁ (ROTAS & COBERTURA REGIONAL)
+   MAPA DO CEARÁ VIVO & SOLTO (SEM CARD, SEM BORDAS, TOTALMENTE INTEGRADO)
    ========================================================================== */
-.ceara-map-showcase {
-  padding: 1.25rem 1.15rem 1rem !important;
+.hero-map-standalone-col {
   display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.map-showcase-header {
-  text-align: center;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--gold-border);
-}
-
-.map-badge-wrap {
-  display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-pill);
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  margin-bottom: 0.45rem;
-}
-
-.map-badge-text {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-weight: 700;
-  color: #34D399;
-}
-
-.map-header-title {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  color: #FFFDF5;
-  font-weight: 700;
-  line-height: 1.25;
-}
-
-.map-header-sub {
-  font-size: 0.72rem;
-  color: var(--text-dim);
-  margin-top: 0.2rem;
-  line-height: 1.4;
-}
-
-/* Container do SVG */
-.map-visual-container {
+  justify-content: center;
   position: relative;
   width: 100%;
-  max-width: 410px;
-  margin: 0 auto;
-  border-radius: 0.75rem;
-  background: radial-gradient(circle at 66% 26%, rgba(212, 175, 55, 0.08) 0%, transparent 65%), #050507;
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.8), 0 8px 24px rgba(0, 0, 0, 0.6);
-  overflow: hidden;
 }
 
-.map-svg-wrapper {
+.ceara-map-standalone {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 auto;
+}
+
+.map-standalone-wrap {
   position: relative;
   width: 100%;
   aspect-ratio: 400 / 398;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.15));
+  animation: mapGentleFloat 8s ease-in-out infinite alternate;
+}
+
+@keyframes mapGentleFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-7px); }
 }
 
 .ceara-interactive-svg {
   width: 100%;
   height: 100%;
   display: block;
+  overflow: visible;
 }
 
 /* Arcos Vetoriais */
 .map-connection-arc {
-  stroke: rgba(212, 175, 55, 0.22);
+  stroke: rgba(212, 175, 55, 0.24);
   stroke-width: 1.2px;
   fill: none;
   transition: stroke 0.35s ease, stroke-width 0.35s ease, filter 0.35s ease;
@@ -644,7 +617,7 @@ h1, h2, h3, h4, .font-serif {
 .map-connection-arc:hover {
   stroke: #FFEAA7;
   stroke-width: 2.2px;
-  filter: drop-shadow(0 0 6px #D4AF37);
+  filter: drop-shadow(0 0 8px #D4AF37);
 }
 
 /* Radar Ondas no SVG */
@@ -669,7 +642,7 @@ h1, h2, h3, h4, .font-serif {
   fill: #E5C05B;
   stroke: #FFFDF5;
   stroke-width: 1.2px;
-  filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.8));
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.85));
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
   transform-origin: 264px 104px;
 }
@@ -689,144 +662,20 @@ h1, h2, h3, h4, .font-serif {
 .map-node-interactive:hover .map-diamond-hub,
 .map-node-interactive.is-active .map-diamond-hub {
   transform: scale(1.35);
-  filter: drop-shadow(0 0 10px #FFEAA7);
+  filter: drop-shadow(0 0 12px #FFEAA7);
 }
 
 .map-node-interactive:hover .map-node-halo,
 .map-node-interactive.is-active .map-node-halo {
   stroke: #FFFDF5;
   stroke-width: 2px;
-  filter: drop-shadow(0 0 8px #FFEAA7);
+  filter: drop-shadow(0 0 10px #FFEAA7);
 }
 
 .map-node-interactive:hover .map-node-core,
 .map-node-interactive.is-active .map-node-core {
   fill: #FFFDF5;
-  filter: drop-shadow(0 0 6px #FFFDF5);
-}
-
-/* Tooltip Dinâmico do Mapa */
-.map-floating-tooltip {
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  right: 8px;
-  background: rgba(11, 11, 15, 0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--gold-border-bright);
-  border-radius: 0.6rem;
-  padding: 0.6rem 0.8rem;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.85), 0 0 20px rgba(212, 175, 55, 0.18);
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: auto;
-}
-
-.map-tooltip-header {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.map-tooltip-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--gold-400);
-  box-shadow: 0 0 8px var(--gold-glow);
-  display: inline-block;
-}
-
-.map-tooltip-city {
-  font-family: var(--font-serif);
-  font-size: 0.875rem;
-  color: #FFFDF5;
-  font-weight: 700;
-}
-
-.map-tooltip-desc {
-  font-size: 0.6875rem;
-  color: var(--text-muted);
-  line-height: 1.35;
-  margin: 0;
-}
-
-.map-tooltip-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: var(--gold-300);
-  text-decoration: none;
-  margin-top: 0.2rem;
-  transition: color 0.2s ease, gap 0.2s ease;
-}
-
-.map-tooltip-link:hover {
-  color: #FFFDF5;
-  gap: 0.55rem;
-}
-
-/* Rodapé do Card do Mapa */
-.map-showcase-footer {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-  padding-top: 0.55rem;
-  border-top: 1px solid var(--gold-border);
-}
-
-.map-chips-header {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gold-300);
-  font-weight: 700;
-  text-align: center;
-}
-
-.map-chips-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  justify-content: center;
-}
-
-.map-chip {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  color: var(--text-dim);
-  font-size: 0.65rem;
-  font-weight: 600;
-  padding: 0.22rem 0.5rem;
-  border-radius: var(--radius-pill);
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.map-chip:hover,
-.map-chip.is-active {
-  background: rgba(212, 175, 55, 0.16);
-  border-color: var(--gold-400);
-  color: #FFFDF5;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
-  transform: translateY(-1px);
-}
-
-.map-action-box {
-  width: 100%;
-}
-
-.map-action-btn {
-  width: 100%;
-  font-size: 0.75rem;
-  padding: 0.6rem 0.85rem;
-  justify-content: center;
+  filter: drop-shadow(0 0 8px #FFFDF5);
 }
 
 .lawyer-chip {

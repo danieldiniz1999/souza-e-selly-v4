@@ -534,7 +534,7 @@
       const cityId = node.getAttribute('data-city-id');
       node.addEventListener('mouseenter', () => selectCity(cityId, false));
       node.addEventListener('focus', () => selectCity(cityId, false));
-      node.addEventListener('click', () => selectCity(cityId, true));
+      node.addEventListener('click', () => selectCity(cityId, false));
     });
 
     chips.forEach((chip) => {
